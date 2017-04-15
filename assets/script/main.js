@@ -46,16 +46,21 @@ $(document).ready(function(){
     </p>`);
 
   $('.story').on('click', '#step4', function() {
-    var step5 = `<div class=step id=step5>
-      <p>
-        content
-      </p>
-    </div>`
     if(!$('#step4')[0].style['background-color']) {
       $('#step4').css({'background-color': 'black', 'color': 'white'});
     } else {
-      $('.story').append(step5);
+      $('.story').append(step5());
     }
   });
+
+  function step5() {
+    var count = $('.step5').length + 1;
+
+    return `<div class='step step5'>
+      <p>
+        There are ${count} step5 divs.
+      </p>
+    </div>`
+  }
 
 });

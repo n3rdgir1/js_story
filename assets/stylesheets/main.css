@@ -2,10 +2,14 @@ p {
   margin: 1em;
 }
 
+body {
+  width: 500px;
+  margin: 0 auto;
+}
+
 .step {
   border: 1px solid;
-  width: 500px;
-  margin: 1em auto;
+  margin: 2em 0;
 }
 
 #step2 {
