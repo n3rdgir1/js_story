@@ -1,0 +1,19 @@
+p {
+  margin: 1em;
+}
+
+.step {
+  border: 1px solid;
+  margin: 1em;
+}
+
+#step2 {
+  display: none;
+}
+
+.spacer {
+  height: 400em;
+}
+
+#step3 {
+}
