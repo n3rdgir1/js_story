@@ -3,13 +3,17 @@ p {
 }
 
 body {
-  width: 500px;
+  width: 800px;
   margin: 0 auto;
 }
 
 .step {
   border: 1px solid;
   margin: 2em 0;
+}
+
+.step h3 {
+  margin: 1em;
 }
 
 #step2 {

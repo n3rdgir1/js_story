@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Story</title>
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
+    <meta content="width=device-width,maximum-scale=1.0,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes" name="viewport">
+  </head>
+
+  <body id='body'>
+    <h1>JavaScript Story</h1>
+    <h2>Chapter 3</h2>
+
+    <div class=story>
+      <div class=step>
+        <h3> Step 4 </h3>
+        <pre>
+          $('.story').on('click', '#step4', function() {
+            if(!$('#step4')[0].style['background-color']) {
+              $('#step4').css({'background-color': 'black', 'color': 'white'});
+            } else {
+              $('.story').append(step5());
+            }
+          });
+        </pre>
+      </div>
+      <div class=step>
+        <h3> function step5() </h3>
+        <pre>
+
+          function step5() {
+            var count = $('.step5').length + 1;
+
+            return `&lt;div class='step step5'\&gt;
+              &lt;p&gt;
+              ${content(count)}
+              &lt;p&gt;
+            &lt;div&gt;`;
+          }
+
+
+          function content(count) {
+            if( count < 3 ) {
+              return `There are ${count} step5 divs`;
+            } else if (count < 5) {
+              return 'Stop clicking step4 already!!';
+            } else {
+              return window.location = 'chapter3.html';
+            }
+          }
+        </pre>
+      </div>
+    </div>
+    <script src='assets/script/jquery-3.1.1.min.js'></script>
+    <script src='assets/script/main.js'></script>
+  </body>
+</html>

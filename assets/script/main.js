@@ -1,49 +1,55 @@
 $(document).ready(function(){
-  console.log('load');
-  console.log('onLoad');
   var body = $('body');
 
   $('#step1').append( `
-    <p>
-      $('.story').on('click', '#step1', function() {<br>
-      &nbsp;&nbsp;$('#step2').css({'display': 'block'});<br>
-      });<br>
-    </p>`);
+    <h3> Step 1 </h3>
+    <pre>
+      $('.story').on('click', '#step1', function() {
+        $('#step2').css({'display': 'block'});
+      });
+    </pre>`);
   $('.story').on('click', '#step1', function() {
     $('#step2').css({'display': 'block'});
   });
 
-  $('#step2').append( `<p>
-      $('.story').on('click', '#step2', function() {<br>
-      &nbsp;&nbsp;var top = $('#step3').position().top;<br>
-      &nbsp;&nbsp;$(window).scrollTop( top );<br>
+  $('#step2').append( `
+    <h3> Step 2 </h3>
+    <pre>
+      $('.story').on('click', '#step2', function() {
+        var top = $('#step3').position().top;
+        $(window).scrollTop( top );
       });
-    </p>`);
+    </pre>`);
   $('.story').on('click', '#step2', function() {
-    console.log('click');
     $('.story').on('click', '#step2', function() {
       var top = $('#step3').position().top;
       $(window).scrollTop( top );
       setTimeout(function() {
         window.location = 'chapter2.html';
-      }, 20000)
+      }, 20000);
     });
   });
 
-  $('#step3').append( `<p>
-    setTimeout(function() {<br>
-    &nbsp;&nbsp;window.location = 'chapter2.html';<br>
-    }, 20000)<br>
-    </p>`);
+  $('#step3').append( `
+    <h3> Step 3 </h3>
+    <pre>
+      setTimeout(function() {
+        window.location = 'chapter2.html';
+      }, 20000);
+    </pre>`);
 
 
-  $('#step4').append( `<p>
-    if( !$('#step4')[0].style['background-color'] ) {<br>
-    &nbsp;&nbsp;$('#step4').css( {'background-color': 'black', 'color': 'white'} );<br>
-    } <span>else {<br>
-    &nbsp;&nbsp;$('.story').append( step5 );<br>
-    }</span>
-    </p>`);
+  $('#step4').append( `
+    <h3> Step 4 </h3>
+    <pre>
+      if(!$('#step4')[0].style['background-color']) {
+        $('#step4').css({'background-color': 'black', 'color': 'white'});
+      } </pre> <span> <pre>
+      else {
+        $('.story').append(step5());
+      }
+    </span></pre>
+    `);
 
   $('.story').on('click', '#step4', function() {
     if(!$('#step4')[0].style['background-color']) {
@@ -58,9 +64,19 @@ $(document).ready(function(){
 
     return `<div class='step step5'>
       <p>
-        There are ${count} step5 divs.
+       ${content(count)}
       </p>
-    </div>`
+    </div>`;
+  }
+
+  function content(count) {
+    if( count < 3 ) {
+      return `There are ${count} step5 divs`;
+    } else if (count < 5) {
+      return 'Stop clicking step4 already!!';
+    } else {
+      return window.location = 'chapter3.html';
+    }
   }
 
 });
