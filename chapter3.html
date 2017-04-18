@@ -30,18 +30,17 @@
           function step5() {
             var count = $('.step5').length + 1;
 
-            return `&lt;div class='step step5'\&gt;
+            return `&lt;div class='step step5'&gt;
               &lt;p&gt;
-              ${content(count)}
-              &lt;p&gt;
-            &lt;div&gt;`;
+                ${content(count)}
+              &lt;/p&gt;
+            &lt;/div&gt;`;
           }
 
-
           function content(count) {
-            if( count < 3 ) {
+            if( count &lt; 3 ) {
               return `There are ${count} step5 divs`;
-            } else if (count < 5) {
+            } else if (count &lt; 5) {
               return 'Stop clicking step4 already!!';
             } else {
               return window.location = 'chapter3.html';
