@@ -26,7 +26,7 @@ $(document).ready(function(){
       $(window).scrollTop( top );
       setTimeout(function() {
         window.location = 'chapter2.html';
-      }, 20000);
+      }, 30000);
     });
   });
 
@@ -35,7 +35,7 @@ $(document).ready(function(){
     <pre>
       setTimeout(function() {
         window.location = 'chapter2.html';
-      }, 20000);
+      }, 30000);
     </pre>`);
 
 
